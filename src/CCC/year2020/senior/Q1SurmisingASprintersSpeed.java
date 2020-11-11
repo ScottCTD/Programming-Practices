@@ -14,12 +14,13 @@ import java.util.Map;
 
 public class Q1SurmisingASprintersSpeed {
 
+    // The answer should be 8853.570251923056
     public static void main(String[] args) {
         // Accept Input
         String rawInputs = null;
         try {
             rawInputs = FileUtils.readFileAsString(
-                    new File("C:\\Users\\Scott\\Downloads\\Compressed\\all_data\\senior_data\\s1\\s1.2-09.in"));
+                    new File("TestFiles/2020Q1.in"));
         } catch (IOException exception) {
             exception.printStackTrace();
         }
