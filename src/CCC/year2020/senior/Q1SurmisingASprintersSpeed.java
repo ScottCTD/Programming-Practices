@@ -1,32 +1,28 @@
 package CCC.year2020.senior;
 
 import xyz.scottc.scu.ArrayUtils;
+import xyz.scottc.scu.MapUtils;
 import xyz.scottc.scu.SCConstants;
 import xyz.scottc.scu.io.FileUtils;
 
-import java.io.FileInputStream;
+import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Q1SurmisingASprintersSpeed {
 
     public static void main(String[] args) {
         // Accept Input
-        FileInputStream inputStream = null;
-        StringBuilder builder = new StringBuilder();
+        String rawInputs = null;
         try {
-            inputStream = new FileInputStream("C:\\Users\\Scott\\Downloads\\Compressed\\all_data\\senior_data\\s1\\s1.2-09.in");
-            int length;
-            byte[] buffer = new byte[8192];
-            while ((length = inputStream.read(buffer)) != -1) {
-                builder.append(new String(buffer, 0, length));
-            }
+            rawInputs = FileUtils.readFileAsString(
+                    new File("C:\\Users\\Scott\\Downloads\\Compressed\\all_data\\senior_data\\s1\\s1.2-09.in"));
         } catch (IOException exception) {
             exception.printStackTrace();
-        } finally {
-            FileUtils.closeStreams(inputStream, null);
         }
-        String rawInputs = builder.toString();
 
         // Read the input
         int amount = Integer.parseInt(rawInputs.trim().substring(0, rawInputs.indexOf("\n")).trim());
@@ -43,7 +39,7 @@ public class Q1SurmisingASprintersSpeed {
         }
 
         // Sort the inputs according to the time (Ascent)
-        Map<Integer, Integer> sortedInputs = new TreeMap<>(inputs);
+        Map<Integer, Integer> sortedInputs = MapUtils.sortMapByKeys(inputs);
         List<Integer> times = new ArrayList<>(sortedInputs.keySet());
         List<Integer> positions = new ArrayList<>(sortedInputs.values());
 
