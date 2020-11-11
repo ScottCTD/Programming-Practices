@@ -26,7 +26,7 @@ public class Q4Tourism {
                 for (int j = 0; j < maxPerDay; j++) {
                     perDay[j] = scores[i + j];
                 }
-                int max = ArrayUtils.findMax(perDay);
+                int max = ArrayUtils.max(perDay);
                 bestTotalScore += max;
             }
             return bestTotalScore;
@@ -63,14 +63,14 @@ public class Q4Tourism {
 
             int totalBestScore = findBestTotalScore(total, maxPerDay, newScores);
             // the max score of that special day
-            totalBestScore += ArrayUtils.findMax(specialDay);
+            totalBestScore += ArrayUtils.max(specialDay);
             possibilities[i] = totalBestScore;
 
             index += maxPerDay;
         }
 
         // return the best score
-        return ArrayUtils.findMax(possibilities);
+        return ArrayUtils.max(possibilities);
     }
 
     public static int daysNeeded(int total, int maxPerDay) {
