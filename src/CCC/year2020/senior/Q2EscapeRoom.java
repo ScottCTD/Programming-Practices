@@ -34,6 +34,8 @@ public class Q2EscapeRoom {
         for (int[] p : all) {
             if (p[0] == grid.getRow() && p[1] == grid.getColumn()) return true;
             int temp = grid.get(p);
+            // Unstable recursion, may produce stack over flow error
+            // Why CCC dont give me the test files for this question?
             escaped = canEscape(temp, grid);
             if (escaped) break;
         }
