@@ -12,9 +12,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Full score
+ */
 public class Q1SurmisingASprintersSpeed {
 
-    // The answer should be 8853.570251923056
+    // The answer should be 1.441456028E9
     public static void main(String[] args) {
         // Accept Input
         String rawInputs = null;

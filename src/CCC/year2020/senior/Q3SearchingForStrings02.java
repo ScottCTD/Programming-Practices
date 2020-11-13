@@ -1,5 +1,9 @@
 package CCC.year2020.senior;
 
+/**
+ * This method is very very very very very slow in handling long String!
+ * But it is stable.
+ */
 public class Q3SearchingForStrings02 extends Q3SearchingForStrings01 {
 
     private static final StringBuilder BUILDER = new StringBuilder();

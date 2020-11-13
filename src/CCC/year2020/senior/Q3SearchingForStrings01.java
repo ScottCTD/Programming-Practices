@@ -9,6 +9,10 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This method is the fastest one of the three maybe.
+ * But... It cannot handle the String longer than 7.
+ */
 public class Q3SearchingForStrings01 implements SCConstants {
 
     protected static List<String> permutations = new ArrayList<>();
@@ -43,7 +47,6 @@ public class Q3SearchingForStrings01 implements SCConstants {
     private static void findAllPermutations(String target) {
         if (times.equals(BigInteger.valueOf(permutations.size()))) return;
         if (times.compareTo(BigInteger.valueOf(permutations.size())) < 0) throw new RuntimeException("Invalid size!");
-        if (permutations.contains(target)) return;
         String[] results = new String[target.length() - 1];
         for (int i = 0; i < target.length() - 1; i++) {
             char[] targetArray = target.toCharArray();
