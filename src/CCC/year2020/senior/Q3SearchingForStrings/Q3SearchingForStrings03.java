@@ -1,4 +1,4 @@
-package CCC.year2020.senior;
+package CCC.year2020.senior.Q3SearchingForStrings;
 
 import xyz.scottc.scu.MathUtils;
 
@@ -11,6 +11,7 @@ import java.util.Set;
 /**
  * Faster than Method02 but need tons of memories.
  * It can handle any String if you have infinite RAM.
+ * Maybe it is extremely hard to fully complete it using JAVA?
  */
 public class Q3SearchingForStrings03 {
 

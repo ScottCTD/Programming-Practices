@@ -9,7 +9,7 @@ public class Q1Flipper {
 
     public void start(String[] args) {
         Grid grid = new Grid();
-        String output = grid.flip("VHHHHHHHHVHVHVHHVHVHVHVHHVHVHHVHVHVHVHHVHVHVHHVHVHVHHVHVH");
+        String output = grid.flip("VHV");
         System.out.println(output);
     }
 

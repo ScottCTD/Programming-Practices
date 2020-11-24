@@ -1,4 +1,4 @@
-package CCC.year2020.senior;
+package CCC.year2020.senior.Q3SearchingForStrings;
 
 /**
  * This method is very very very very very slow in handling long String!
