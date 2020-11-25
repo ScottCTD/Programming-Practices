@@ -4,6 +4,9 @@ import xyz.scottc.scu.ArrayUtils;
 
 import java.util.Arrays;
 
+/**
+ * Didn't reach the advanced requirement, so it's not very effective.
+ */
 public class Q4 {
 
     public static void main(String[] args) {
@@ -18,7 +21,7 @@ public class Q4 {
         int[] temp = ArrayUtils.combine(nums1, nums2);
         if (temp.length == 0) return 0;
         if (temp.length == 1) return temp[0];
-        
+
         Arrays.sort(temp);
 
         if (temp.length % 2 != 0) {

@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Not very effective.
+ */
 public class Q2SumTwo {
 
     public static void main(String[] args) {
@@ -94,11 +97,9 @@ public class Q2SumTwo {
 
     // Given
     public static class ListNode {
+
         int val;
         ListNode next;
-
-        ListNode() {
-        }
 
         ListNode(int val) {
             this.val = val;

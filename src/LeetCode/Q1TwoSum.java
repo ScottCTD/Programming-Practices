@@ -1,5 +1,8 @@
 package LeetCode;
 
+/*
+Very effective.
+ */
 public class Q1TwoSum {
 
     public static int[] twoSum(int[] nums, int target) {

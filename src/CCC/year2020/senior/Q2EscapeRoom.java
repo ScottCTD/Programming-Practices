@@ -15,7 +15,7 @@ import java.util.List;
 public class Q2EscapeRoom {
 
     public static void main(String[] args) {
-        Grid grid = Grid.createGrid(new File("TestFiles/2020Q2.in"));
+        Grid grid = Grid.createGrid(new File("TestFiles/CCC/2020Q2.in"));
         try {
             boolean escape = canEscape(grid.get(0, 0), grid);
             if (escape) {

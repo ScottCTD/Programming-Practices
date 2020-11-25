@@ -23,7 +23,7 @@ public class Q1SurmisingASprintersSpeed {
         String rawInputs = null;
         try {
             rawInputs = FileUtils.readFileAsString(
-                    new File("TestFiles/2020Q1.in"));
+                    new File("TestFiles/CCC/2020Q1.in"));
         } catch (IOException exception) {
             exception.printStackTrace();
         }

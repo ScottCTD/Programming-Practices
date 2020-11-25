@@ -75,7 +75,7 @@ public class Q3SearchingForStrings01 implements SCConstants {
 
     protected static String[] readFromTestFile() {
         try {
-            String rawInput = FileUtils.readFileAsString(new File("TestFiles/2020Q3.in"));
+            String rawInput = FileUtils.readFileAsString(new File("TestFiles/CCC/2020Q3.in"));
             String[] inputs = new String[2];
             int index = rawInput.indexOf("\n");
             inputs[0] = rawInput.substring(0, index).trim();
