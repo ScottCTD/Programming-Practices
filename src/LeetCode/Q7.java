@@ -18,6 +18,9 @@ public class Q7 {
         System.out.println(reverse02(-123));
     }
 
+    // Unoriginal
+    // The best method.
+    // Same idea as mine.
     private static int reverse03(int x) {
         long result = 0;
         while (x != 0) {
