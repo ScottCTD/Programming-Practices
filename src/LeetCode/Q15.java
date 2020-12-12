@@ -6,18 +6,37 @@ import java.util.*;
  * 给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
  * <p>
  * 注意：答案中不可以包含重复的三元组。
+ * <p>
+ * 等待继续完善
  */
 public class Q15 {
 
     public static void main(String[] args) {
 
-        System.out.println(threeSum(new int[]{-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0}));
+        System.out.println(threeSum02(new int[]{-1, 0, 1, 2, -1, -4}));
 
+    }
+
+    private static List<List<Integer>> threeSum02(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (i != 0 && nums[i] == nums[i - 1]) continue;
+            for (int j = i + 1; j < nums.length; j++) {
+                if (j != i + 1 && nums[j] == nums[j - 1]) continue;
+                for (int k = j + 1; k < nums.length; k++) {
+                    if (k != j + 1 && nums[k] == nums[k - 1]) continue;
+                    int a = nums[i], b = nums[j], c = nums[k];
+                    if ((a + b + c) == 0) result.add(Arrays.asList(a, b, c));
+                }
+            }
+        }
+        return result;
     }
 
     // Original
     // Not effective
-    public static List<List<Integer>> threeSum(int[] nums) {
+    private static List<List<Integer>> threeSum01(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < nums.length && j != i; j++) {
