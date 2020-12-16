@@ -32,14 +32,18 @@ public class Q17 {
         return result;
     }
 
+    // 回溯算法 维护一个字符串temp
+    // 如果它不符合条件（不等于输入的digits的长度），就执行操作
+    // 操作就是将下个数字代表的映射过后的字符串的某个字符加入到这个temp
+    // 穷举全部
     private static void getAllCombinations(List<String> result, Map<Character, String> mapping, char[] digitChars, int index, StringBuilder temp) {
         if (index == digitChars.length) {
             result.add(temp.toString());
         } else {
             char[] mappedString = mapping.get(digitChars[index]).toCharArray();
-            for (int i = 0; i < mappedString.length; i++) {
-                temp.append(mappedString[i]);
-                getAllCombinations(result, mapping, digitChars, index + 1, temp);
+            for (char c : mappedString) {
+                temp.append(c);
+                Q17.getAllCombinations(result, mapping, digitChars, index + 1, temp);
                 temp.deleteCharAt(index);
             }
         }

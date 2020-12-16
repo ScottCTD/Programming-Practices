@@ -7,7 +7,7 @@ package LeetCode;
 public class Q9 {
 
     public static void main(String[] args) {
-        int x = 121;
+        int x = 1234567899;
         System.out.println(isPalindrome02(x));
     }
 
