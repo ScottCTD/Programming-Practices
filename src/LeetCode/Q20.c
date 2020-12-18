@@ -118,9 +118,6 @@ bool isValid02(char* s) {
 int main() {
 
     char s[] = "()";
-    /*
-    A Failed Attemp
-    */
     printf("%d\n", isValid02(s));
 
     return 0;
