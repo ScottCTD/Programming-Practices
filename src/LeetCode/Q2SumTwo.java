@@ -5,20 +5,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Not very effective.
- */
 public class Q2SumTwo {
 
     public static void main(String[] args) {
-        /*ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));*/
+        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
+        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
 
-        ListNode l1 = new ListNode(9);
-        ListNode l2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9,
-                new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
-
-        ListNode result = addTwoNumbers(l1, l2);
+        ListNode result = addTwoNumbers02(l1, l2);
 
         List<Integer> list = new ArrayList<>();
 
@@ -27,7 +20,53 @@ public class Q2SumTwo {
         System.out.println(list);
     }
 
-    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    // Not original
+    // Very effective -> 2ms
+    private static ListNode addTwoNumbers02(ListNode l1, ListNode l2) {
+        // Head: The start of the linked list
+        // Tail: The dynamic rear part of the linked list
+        ListNode head = null, tail = null;
+
+        // The carry number
+        int carry = 0;
+
+        while (l1 != null || l2 != null) {
+
+            // v1, v2, and sum
+            int v1 = l1 == null ? 0 : l1.val, v2 = l2 == null ? 0 : l2.val, sum = v1 + v2 + carry;
+
+            // if haed == null, the first loop -> initialize the head and tail
+            // Since now the size of the linked list is 1, the head and tail should be equal
+            if (head == null) {
+                // sum % 10 signify the single digit
+                head = tail = new ListNode(sum % 10);
+                // else: second or further loop, should move the tail further
+            } else {
+                tail.next = new ListNode(sum % 10);
+                tail = tail.next;
+            }
+
+            // sum / 10 signify the tens digit if possible (if not zero)
+            // This number will be carried to the next node, which is good
+            carry = sum / 10;
+
+            if (l1 != null) l1 = l1.next;
+            if (l2 != null) l2 = l2.next;
+        }
+        // The carry may not be zero after all finished, so add a new node with carry as the last node if not zero.
+        if (carry > 0) tail.next = new ListNode(carry);
+        // Head is the first element in the linked list
+        return head;
+    }
+
+    /**
+     * Original
+     * Not very effective.
+     * Convert the linked list to BigInteger and then convert back
+     * Not very good.
+     * But I cannot find another method, oh my world....
+     */
+    public static ListNode addTwoNumbers01(ListNode l1, ListNode l2) {
 
         List<Integer> list01 = new ArrayList<>() {
             @Override
