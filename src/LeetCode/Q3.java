@@ -10,6 +10,7 @@ public class Q3 {
 
     // This method is not my method.
     // The most effective one in Java.
+    // Miraculous!
     public static int lengthOfLongestSubstring03(String s) {
         int[] last = new int[128];
         int length = s.length();
@@ -29,6 +30,9 @@ public class Q3 {
 
     // Original
     // 9ms in leetcode
+    // Still violently iterate all element
+    // But, use a boolean array to stored whthere an element was used in each situation
+    // More effective
     public static int lengthOfLongestSubstring02(String s) {
         int length = 0;
 
@@ -39,7 +43,7 @@ public class Q3 {
             if (length >= originalLen - i) return length;
             boolean[] exist = new boolean[128];
             int temp = 0;
-            for (int j = i; j < originalLen; j++) {
+            for (int j = i + 1; j < originalLen; j++) {
                 if (!exist[chars[j]]) {
                     exist[chars[j]] = true;
                     temp++;
@@ -55,13 +59,15 @@ public class Q3 {
 
     // Original
     // Not effective.
+    // Violently iterate all the element in the char array
+    // Find all the length and get the maximum
     public static int lengthOfLongestSubstring01(String s) {
         int length = 0;
         char[] chars = s.toCharArray();
         for (int i = 0; i < s.length(); i++) {
             if (length >= chars.length - i) break;
             List<Character> builder = new ArrayList<>(s.length() - i);
-            for (int j = i; j < s.length(); j++) {
+            for (int j = i + 1; j < s.length(); j++) {
                 if (!builder.contains(chars[j])) {
                     builder.add(chars[j]);
                     int temp = builder.size();
