@@ -12,8 +12,14 @@ public class Q9 {
     }
 
     // Original
-    // Very effective -> LeetCode 9 ms
+    // Very efficient -> LeetCode 9 ms Top Method
     // Reached advanced requirement.
+    /*
+    Conclude in 12/25/2020 18:32
+    Idea:
+        1. Reverse the number x -> see Q8
+        2. return if the reversed number is equals to the original x
+     */
     private static boolean isPalindrome02(int x) {
         // Special case
         if (x == 0) return true;
@@ -29,7 +35,7 @@ public class Q9 {
     }
 
     // Original
-    // Ineffective
+    // Inefficient
     // Not achieve advanced requirement.
     private static boolean isPalindrome01(int x) {
         String s = String.valueOf(x);

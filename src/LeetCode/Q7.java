@@ -54,7 +54,7 @@ public class Q7 {
     }
 
     // Orginal
-    // Not effective.
+    // Not efficient.
     private static int reverse01(int x) {
         try {
             String input = String.valueOf(x);

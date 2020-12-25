@@ -21,7 +21,7 @@ public class Q2SumTwo {
     }
 
     // Not original
-    // Very effective -> 2ms
+    // Very efficient -> 2ms
     private static ListNode addTwoNumbers02(ListNode l1, ListNode l2) {
         // Head: The start of the linked list
         // Tail: The dynamic rear part of the linked list
@@ -61,7 +61,7 @@ public class Q2SumTwo {
 
     /**
      * Original
-     * Not very effective.
+     * Not very efficient.
      * Convert the linked list to BigInteger and then convert back
      * Not very good.
      * But I cannot find another method, oh my world....

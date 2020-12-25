@@ -16,21 +16,4 @@ public class Main {
         System.out.println(total);
     }
 
-    public static void sort(int[] target) {
-        for (int i = 0; i < target.length; i++) {
-            for (int j = 0; j < target.length - 1; j++) {
-                if (target[j] < target[j + 1]) continue;
-                int temp = target[j];
-                target[j] = target[j + 1];
-                target[j + 1] = temp;
-            }
-        }
-    }
-
-    public static void fill(int[] target) {
-        for (int i = 0; i < target.length; i++) {
-            target[i] = (int) (1000 * Math.random());
-        }
-    }
-
 }

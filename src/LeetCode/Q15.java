@@ -35,7 +35,7 @@ public class Q15 {
     }
 
     // Original
-    // Not effective
+    // Not efficient
     private static List<List<Integer>> threeSum01(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {

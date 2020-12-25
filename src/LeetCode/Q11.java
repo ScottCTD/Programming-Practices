@@ -8,7 +8,7 @@ public class Q11 {
     }
 
     // Almost original
-    // Very effective
+    // Very efficient
     public static int maxArea02(int[] height) {
         int i = 0, j = height.length - 1, result = 0;
 
@@ -25,7 +25,7 @@ public class Q11 {
     }
 
     // Original
-    // Not Effective
+    // Not efficient
     public static int maxArea01(int[] height) {
         int result = 0;
         for (int i = 0; i < height.length; i++) {

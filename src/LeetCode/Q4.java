@@ -5,7 +5,7 @@ import xyz.scottc.scu.ArrayUtils;
 import java.util.Arrays;
 
 /**
- * Didn't reach the advanced requirement, so it's not very effective.
+ * Didn't reach the advanced requirement, so it's not very efficient.
  */
 public class Q4 {
 

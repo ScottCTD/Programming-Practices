@@ -18,7 +18,7 @@ public class Q14 {
     }
 
     // Original
-    // Extremely Effective
+    // Extremely efficient
     // Top Solution
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";

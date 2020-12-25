@@ -9,7 +9,7 @@ public class Q12 {
     }
 
     // Not original
-    // Little more effective than mine
+    // Little more efficient than mine
     // But the codes are much more cleaner
     public static String intToRoman02(int num) {
         int[] nums = new int[]{1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
@@ -25,7 +25,7 @@ public class Q12 {
     }
 
     // Original
-    // Not very effective but it's ok
+    // Not very efficient but it's ok
     // But the codes are really stupid
     public static String intToRoman01(int num) {
         String result = "";

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
-Very effective.
+Very efficient.
  */
 public class Q1TwoSum {
 
@@ -15,7 +15,7 @@ public class Q1TwoSum {
 
     /*
     Original
-    Very Effective
+    Very efficient
     My personal solutions in Java and C, using a very direct way of double for loops.
      */
     public static int[] twoSum01(int[] nums, int target) {

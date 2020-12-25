@@ -16,7 +16,7 @@ public class Q16 {
     }
 
     // Learned
-    // Very effective
+    // Very efficient
     // 双指针
     private static int threeSumClosest02(int[] nums, int target) {
         Arrays.sort(nums);
@@ -48,7 +48,7 @@ public class Q16 {
     }
 
     // Original
-    // Not effective
+    // Not efficient
     private static int threeSumClosest01(int[] nums, int target) {
         int result = 0;
         Arrays.sort(nums);

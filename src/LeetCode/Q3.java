@@ -9,7 +9,7 @@ import java.util.List;
 public class Q3 {
 
     // This method is not my method.
-    // The most effective one in Java.
+    // The most efficient one in Java.
     // Miraculous!
     public static int lengthOfLongestSubstring03(String s) {
         int[] last = new int[128];
@@ -31,8 +31,8 @@ public class Q3 {
     // Original
     // 9ms in leetcode
     // Still violently iterate all element
-    // But, use a boolean array to stored whthere an element was used in each situation
-    // More effective
+    // But, use a boolean array to stored whether an element was used in each situation
+    // More efficient
     public static int lengthOfLongestSubstring02(String s) {
         int length = 0;
 
@@ -58,7 +58,7 @@ public class Q3 {
     }
 
     // Original
-    // Not effective.
+    // Not efficient.
     // Violently iterate all the element in the char array
     // Find all the length and get the maximum
     public static int lengthOfLongestSubstring01(String s) {

@@ -4,14 +4,14 @@ public class Q8 {
 
     public static void main(String[] args) {
 
-        System.out.println(myAtoi03("0000000000012345678"));
+        System.out.println(myAtoi02("0000000000012345678"));
     }
 
     // Original - 12/23/2020 20:27
-    // Relatively effective - 5 ms in leetcode
+    // Relatively efficient - 5 ms in leetcode
     // Important change: no Integer.parse() anymore!
     // (char - '0') should equal to it's real digit
-    private static int myAtoi03(String s) {
+    private static int myAtoi02(String s) {
         if (s.isBlank()) return 0;
         s = s.trim();
 
@@ -51,7 +51,7 @@ public class Q8 {
     }
 
     // Original - 12/23/2020 19:27
-    // Not effective at all - 9 ms
+    // Not efficient at all - 9 ms
     private static int myAtoi01(String s) {
         if (s.isBlank()) return 0;
         s = s.trim();

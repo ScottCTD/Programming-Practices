@@ -9,7 +9,7 @@ public class Q20 {
         System.out.println(isValid("(([]){})"));
     }
 
-    // Not original and slow
+    // Not original and inefficient
     private static boolean isValid(String s) {
         if (s.length() <= 1 || s.length() % 2 != 0) return false;
         int length = s.length() / 2;

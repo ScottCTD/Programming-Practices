@@ -12,7 +12,7 @@ public class Q6 {
     }
 
     // Original
-    // Relatively effective -> 6 ms
+    // Relatively efficient -> 6 ms
     // Same method as convert01
     // but with better logic and way to iterate
     private static String convert02(String s, int numRows) {
@@ -60,7 +60,7 @@ public class Q6 {
     }
 
     // Original
-    // Not very effective -> 9 ms
+    // Not very efficient -> 9 ms
     // Use an array of char lists to visualize the grid
     // then, put every character in zigzag formation
     // Lastly, orderly iterate the array to get the fianl result
