@@ -4,13 +4,6 @@ package LeetCode;
  * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
  * 123 -> 321
  * -123 -> -321
- * <p>
- * <p>
- * 123 -> 3  2  1
- * 3 * 100
- * 2 * 10
- * 3 * 1
- * -> 321
  */
 public class Q7 {
 
@@ -32,6 +25,20 @@ public class Q7 {
 
     // Original
     // 2ms in LeetCode
+    /*
+    Conclude in 12/25/2020 18:28
+    Idea:
+    123 / 10 = 12
+    12 / 10 = 1
+
+    123 % 10 = 3
+    12 % 10 = 2
+    1 % 10 = 1
+
+    loop 1: 3
+    loop 2: 3 * 10 + 12 % 10 = 32
+    loop 3: 3 * 10 + 12 % 10 + 1 % 10 = 321
+     */
     private static int reverse02(int x) {
         long result = 0;
         long multiplier = 10;
@@ -46,6 +53,7 @@ public class Q7 {
         return (int) result;
     }
 
+    // Orginal
     // Not effective.
     private static int reverse01(int x) {
         try {
