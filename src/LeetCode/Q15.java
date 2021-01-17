@@ -8,26 +8,41 @@ import java.util.*;
  * 注意：答案中不可以包含重复的三元组。
  * <p>
  * 等待继续完善
+ * -1, 0, 1, 2, -1, -4
+ * -4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0
  */
 public class Q15 {
 
     public static void main(String[] args) {
 
-        System.out.println(threeSum02(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(threeSum02(new int[]{-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0}));
 
     }
 
+    // Original
+    // Double Index
+    // I don't know why this one is not efficient, it should be...
     private static List<List<Integer>> threeSum02(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<>();
+        if (nums[0] >= 0) return result;
         for (int i = 0; i < nums.length; i++) {
             if (i != 0 && nums[i] == nums[i - 1]) continue;
-            for (int j = i + 1; j < nums.length; j++) {
-                if (j != i + 1 && nums[j] == nums[j - 1]) continue;
-                for (int k = j + 1; k < nums.length; k++) {
-                    if (k != j + 1 && nums[k] == nums[k - 1]) continue;
-                    int a = nums[i], b = nums[j], c = nums[k];
-                    if ((a + b + c) == 0) result.add(Arrays.asList(a, b, c));
+            int j = i + 1, k = nums.length - 1;
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+                    do {
+                        k--;
+                    } while (j < k && nums[k] == nums[k + 1]);
+                    do {
+                        j++;
+                    } while (j < k && nums[j] == nums[j - 1]);
+                } else if (sum > 0) {
+                    k--;
+                } else {
+                    j++;
                 }
             }
         }
@@ -83,8 +98,8 @@ public class Q15 {
             b = a;
             a = Arrays.asList(0, 0, 0);
         }
-        for (int i = 0; i < b.size(); i++) {
-            if (Collections.binarySearch(a, b.get(i)) < 0) {
+        for (Integer integer : b) {
+            if (Collections.binarySearch(a, integer) < 0) {
                 return false;
             }
         }
