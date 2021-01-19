@@ -18,7 +18,7 @@ public class Q21 {
 
     // 01/15/2021 22:28
     // Original
-    // 1ms in LeetCode, efficient.
+    // 0ms in LeetCode, efficient.
     private static ListNode mergeTwoLists02(ListNode l1, ListNode l2) {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
@@ -41,7 +41,7 @@ public class Q21 {
 
     // 01/15/2021 21:46
     // Original
-    // 1 ms in LeetCode, not efficient comparatively.
+    // 1ms in LeetCode, not efficient comparatively.
     private static ListNode mergeTwoLists01(ListNode l1, ListNode l2) {
         if (l1 == null && l2 == null) return null;
         ListNode head = null, tail = null;
