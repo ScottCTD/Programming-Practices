@@ -19,7 +19,7 @@ public class Q18 {
         System.out.println(fourSum(new int[]{-2, -1, -1, 1, 1, 2, 2}, 0));
     }
 
-    // Original - With a tiny part got from others
+    // Almost Original - With a tiny tiny part got from others
     // Efficient - 7ms in LeetCode - Same idea as top method - Double index
     public static List<List<Integer>> fourSum(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();

@@ -22,7 +22,7 @@ public class Q27 {
     }
 
     // Original
-    // Effecient - 0ms in LeetCode - Top Method
+    // Efficient - 0ms in LeetCode - Top Method
     public static int removeElement01(int[] nums, int val) {
         int i = 0;
         for (int j = 0; j < nums.length; j++) {
