@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 011/13/2020 ..:..
  * This method is the fastest one of the three maybe.
  * But... It cannot handle the String longer than 7.
  */

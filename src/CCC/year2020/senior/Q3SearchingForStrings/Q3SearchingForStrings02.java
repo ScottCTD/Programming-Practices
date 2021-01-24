@@ -1,6 +1,7 @@
 package CCC.year2020.senior.Q3SearchingForStrings;
 
 /**
+ * 011/13/2020 19:45
  * This method is very very very very very slow in handling long String!
  * But it is stable.
  */
