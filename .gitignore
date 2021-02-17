@@ -1,7 +1,8 @@
 .idea/
-out/
 .vscode/
-Questions/
-TestFiles/
+out/
+
+Competitive Programming.iml
 
 *.exe
+

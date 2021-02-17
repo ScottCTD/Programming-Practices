@@ -13,7 +13,7 @@ using namespace std;
 
 class Solution {
 public:
-    
+
     // Original
     // Relatively Not Very Efficient - 18 ms in LeetCode
     vector<vector<int>> matrixReshape01(vector<vector<int>> &nums, int r, int c) {
@@ -45,7 +45,7 @@ public:
     // Efficient -> 12 ms in LeetCode
     vector<vector<int>> matrixReshape02(vector<vector<int>> &nums, int r, int c) {
         int realRow = nums.size(), realColumn = nums[0].size();
-        if (realRow * realColumn != r * c) {    
+        if (realRow * realColumn != r * c) {
             return nums;
         }
         vector<vector<int>> result (r, vector<int> (c, 0));
