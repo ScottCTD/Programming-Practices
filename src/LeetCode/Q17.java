@@ -40,7 +40,7 @@ public class Q17 {
             char[] mappedString = mapping.get(digitChars[index]).toCharArray();
             for (char c : mappedString) {
                 temp.append(c);
-                Q17.getAllCombinations(result, mapping, digitChars, index + 1, temp);
+                getAllCombinations(result, mapping, digitChars, index + 1, temp);
                 temp.deleteCharAt(index);
             }
         }

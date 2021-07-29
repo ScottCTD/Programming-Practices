@@ -18,7 +18,7 @@ public class Q4 {
     }
 
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] temp = ArrayUtils.combine(nums1, nums2);
+        int[] temp = combine(nums1, nums2);
         if (temp.length == 0) return 0;
         if (temp.length == 1) return temp[0];
 
@@ -30,6 +30,13 @@ public class Q4 {
             int index = temp.length / 2 - 1;
             return (temp[index] + temp[index + 1]) / 2D;
         }
+    }
+
+    public static int[] combine(int[] array01, int[] array02) {
+        int[] result = new int[array01.length + array02.length];
+        System.arraycopy(array01, 0, result, 0, array01.length);
+        System.arraycopy(array02, 0, result, array01.length, array02.length);
+        return result;
     }
 
 }

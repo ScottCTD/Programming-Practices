@@ -8,6 +8,10 @@ import java.util.List;
  */
 public class Q3 {
 
+    public static void main(String[] args) {
+        System.out.println(lengthOfLongestSubstring02("au"));
+    }
+
     // This method is not my method.
     // The most efficient one in Java.
     // Miraculous!
@@ -38,9 +42,11 @@ public class Q3 {
 
         char[] chars = s.toCharArray();
         int originalLen = chars.length;
+        if (originalLen == 1) {
+            return 1;
+        }
 
         for (int i = 0; i < originalLen; i++) {
-            if (length >= originalLen - i) return length;
             boolean[] exist = new boolean[128];
             int temp = 0;
             for (int j = i + 1; j < originalLen; j++) {
