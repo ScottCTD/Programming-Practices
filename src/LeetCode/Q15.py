@@ -2,22 +2,39 @@
 # Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] 
 # such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 # Notice that the solution set must not contain duplicate triplets.
+# Scott 2021/07/30
 class Solution:
+
+    # Original
+    # Relatively Efficient 60.53%
+    # Double index with sorted list
     def threeSum(self, nums: list[int]) -> list[list[int]]:
-        nums.sort()
         length = len(nums)
+        if length < 3:
+            return []
+        nums.sort()
         result = []
-        for i in range(length):
-            if i and nums[i] == nums[i - 1]:
+        for index in range(length):
+            if index and nums[index] == nums[index - 1]:
                 continue
-            for j in range(i + 1, length):
-                if j > i + 1 and nums[j] == nums[j - 1]:
-                    continue
-                for k in range(j + 1, length):
-                    if k > j + 1 and nums[k] == nums[k - 1]:
-                        continue
-                    if nums[i] + nums[j] + nums[k] == 0:
-                        result.append([nums[i], nums[j], nums[k]])
+            i = index + 1
+            j = length - 1
+            while i < j:
+                sum = nums[index] + nums[i] + nums[j]
+                if sum == 0:
+                    result.append([nums[index], nums[i], nums[j]])
+                    # Move both left and right pointers
+                    i += 1
+                    # If current value is still equal to the previous one, continue increasing
+                    while (i < j and nums[i] == nums[i - 1]):
+                        i += 1
+                    j -= 1
+                    while (i < j and nums[j] == nums[j + 1]):
+                        j -= 1
+                elif sum > 0:
+                    j -= 1
+                elif sum < 0:
+                    i += 1
         return result
 
 if __name__ == "__main__":
