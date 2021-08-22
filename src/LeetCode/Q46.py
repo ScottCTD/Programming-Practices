@@ -8,6 +8,7 @@ class Solution:
     def permute(self, nums: list[int]) -> list[list[int]]:
         length = len(nums)
         result = []
+
         def backtrack(path: list[int], exist: list[bool]):
             if len(path) == length:
                 result.append(path)
@@ -19,7 +20,7 @@ class Solution:
                     exist[i] = False
         backtrack([], [False] * length)
         return result
-    
+
     # Not origianl
     # 100%
     def permute2(self, nums: list[int]) -> list[list[int]]:
@@ -36,6 +37,7 @@ class Solution:
                     answer.append(res)
                     i += 1
         return answer
+
 
 if __name__ == "__main__":
     print(Solution().permute([1, 2, 3]))

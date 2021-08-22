@@ -1,5 +1,5 @@
 # 3Sum
-# Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] 
+# Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]]
 # such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 # Notice that the solution set must not contain duplicate triplets.
 # Scott 2021/07/30
@@ -37,7 +37,9 @@ class Solution:
                     i += 1
         return result
 
+
 if __name__ == "__main__":
-    print(Solution().threeSum([-1,0,1,2,-1,-4]), [[-1,-1,2],[-1,0,1]])
+    print(Solution().threeSum([-1, 0, 1, 2, -1, -4]),
+          [[-1, -1, 2], [-1, 0, 1]])
     print(Solution().threeSum([]), [])
     print(Solution().threeSum([0]), [])

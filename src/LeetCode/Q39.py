@@ -17,14 +17,15 @@ class Solution:
                 result.append(path)
                 return
             for i in range(begin, length):
-                dfs(candidates, length, i, path + [candidates[i]], result, target - candidates[i])
+                dfs(candidates, length, i, path +
+                    [candidates[i]], result, target - candidates[i])
 
         length = len(candidates)
         path = []
         result = []
         dfs(candidates, length, 0, path, result, target)
         return result
-    
+
     def combinationSum2(self, candidates: list[int], target: int) -> list[list[int]]:
         def backtrack(candidates: list[int], target: int, length: int, sum: int, path: list[int], result: list[list[int]], start: int):
             if sum > target:
@@ -36,17 +37,18 @@ class Solution:
                 # 剪枝
                 if sum + candidates[i] > target:
                     return
-                backtrack(candidates, target, length, sum + candidates[i], path + [candidates[i]], result, i)
+                backtrack(candidates, target, length, sum +
+                          candidates[i], path + [candidates[i]], result, i)
         candidates.sort()
         result = []
         backtrack(candidates, target, len(candidates), 0, [], result, 0)
         return result
 
+
 if __name__ == "__main__":
-    print(Solution().combinationSum2([2,3,6,7], 7))
-    print(Solution().combinationSum2([2,3,5], 8))
+    print(Solution().combinationSum2([2, 3, 6, 7], 7))
+    print(Solution().combinationSum2([2, 3, 5], 8))
     print(Solution().combinationSum2([2], 1))
     print(Solution().combinationSum2([1], 1))
     print(Solution().combinationSum2([1], 2))
-    print(Solution().combinationSum2([2,7,6,3,5,1], 9))
-    
+    print(Solution().combinationSum2([2, 7, 6, 3, 5, 1], 9))

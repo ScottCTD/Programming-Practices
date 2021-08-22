@@ -3,8 +3,8 @@
 #  This represents the result of splitting the original source code string by the newline character '\n'.
 # In C++, there are two types of comments, line comments, and block comments.
 # The string "//" denotes a line comment, which represents that it and the rest of the characters to the right of it in the same line should be ignored.
-# The string "/*" denotes a block comment, which represents that all characters until the next (non-overlapping) occurrence of "*/" should be ignored. 
-# (Here, occurrences happen in reading order: line by line from left to right.) 
+# The string "/*" denotes a block comment, which represents that all characters until the next (non-overlapping) occurrence of "*/" should be ignored.
+# (Here, occurrences happen in reading order: line by line from left to right.)
 # To be clear, the string "/*/" does not yet end the block comment, as the ending would be overlapping the beginning.
 # The first effective comment takes precedence over others.
 # For example, if the string "//" occurs in a block comment, it is ignored.
@@ -20,10 +20,11 @@
 
 from typing import List
 
+
 class Solution:
 
     # Original
-    # 95.60% 
+    # 95.60%
     # Time O(n) n = The total amount of chars in source
     # Space O(n)
     def removeComments1(self, source: List[str]) -> List[str]:
@@ -72,12 +73,12 @@ class Solution:
 
 if __name__ == '__main__':
     print(Solution().removeComments1(["/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"])
-            == ["int main()","{ ","  ","int a, b, c;","a = b + c;","}"])
+          == ["int main()", "{ ", "  ", "int a, b, c;", "a = b + c;", "}"])
     print(Solution().removeComments1(["a/*comment", "line", "more_comment*/b"])
-            == ["ab"])
+          == ["ab"])
     print(Solution().removeComments1(["void func(int k) {", "// this function does nothing /*", "   k = k*2/4;", "   k = k/2;*/", "}"])
-            == ["void func(int k) {","   k = k*2/4;","   k = k/2;*/","}"])
+          == ["void func(int k) {", "   k = k*2/4;", "   k = k/2;*/", "}"])
     print(Solution().removeComments1(["main() {", "/* here is commments", "  // still comments */", "   double s = 33;", "   cout << s;", "}"])
-            == ["main() {","   double s = 33;","   cout << s;","}"])
-    print(Solution().removeComments1(["a//*b/*/c","blank","d/*/e/*/f"]) == ["a","blank","df"])
-        
+          == ["main() {", "   double s = 33;", "   cout << s;", "}"])
+    print(Solution().removeComments1(
+        ["a//*b/*/c", "blank", "d/*/e/*/f"]) == ["a", "blank", "df"])

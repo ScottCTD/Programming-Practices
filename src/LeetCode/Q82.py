@@ -1,5 +1,5 @@
 # 82. Remove Duplicates from Sorted List II
-# Given the head of a sorted linked list, delete all nodes that have duplicate numbers, 
+# Given the head of a sorted linked list, delete all nodes that have duplicate numbers,
 # leaving only distinct numbers from the original list. Return the linked list sorted as well.
 # Scott 2021/08/20
 
@@ -15,7 +15,7 @@ class ListNode:
             node.next = ListNode(l[i])
             node = node.next
         return head
-    
+
     def __str__(self) -> str:
         node = self
         result = ''
@@ -23,6 +23,7 @@ class ListNode:
             result += str(node.val) + '->'
             node = node.next
         return result
+
 
 class Solution:
 
@@ -42,12 +43,13 @@ class Solution:
                     node = node.next
                 prev.next = node.next
             else:
-                prev = node    
+                prev = node
             node = node.next
         return dummy.next
 
 
 if __name__ == '__main__':
-    print(Solution().deleteDuplicates(ListNode.create([1,2,3,3,4,4,5])))
-    print(Solution().deleteDuplicates(ListNode.create([1,1,1,2,3])))
-    print(Solution().deleteDuplicates(ListNode.create([1,2,2,3,3,4,4,5,5,6,6])))
+    print(Solution().deleteDuplicates(ListNode.create([1, 2, 3, 3, 4, 4, 5])))
+    print(Solution().deleteDuplicates(ListNode.create([1, 1, 1, 2, 3])))
+    print(Solution().deleteDuplicates(
+        ListNode.create([1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6])))

@@ -4,6 +4,7 @@
 
 from typing import List
 
+
 class Solution:
 
     # Original
@@ -18,9 +19,9 @@ class Solution:
             c = s[i]
             s[i] = s[-(i + 1)]
             s[-(i + 1)] = c
-    
+
 
 if __name__ == '__main__':
-    s = ["h","e","l","l","o"]
+    s = ["h", "e", "l", "l", "o"]
     Solution().reverseString(s)
     print(s)

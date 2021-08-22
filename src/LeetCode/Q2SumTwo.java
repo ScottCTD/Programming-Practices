@@ -50,21 +50,22 @@ public class Q2SumTwo {
             // This number will be carried to the next node, which is good
             carry = sum / 10;
 
-            if (l1 != null) l1 = l1.next;
-            if (l2 != null) l2 = l2.next;
+            if (l1 != null)
+                l1 = l1.next;
+            if (l2 != null)
+                l2 = l2.next;
         }
-        // The carry may not be zero after all finished, so add a new node with carry as the last node if not zero.
-        if (carry > 0) tail.next = new ListNode(carry);
+        // The carry may not be zero after all finished, so add a new node with carry as
+        // the last node if not zero.
+        if (carry > 0)
+            tail.next = new ListNode(carry);
         // Head is the first element in the linked list
         return head;
     }
 
     /**
-     * Original
-     * Not very efficient.
-     * Convert the linked list to BigInteger and then convert back
-     * Not very good.
-     * But I cannot find another method, oh my world....
+     * Original Not very efficient. Convert the linked list to BigInteger and then
+     * convert back Not very good. But I cannot find another method, oh my world....
      */
     public static ListNode addTwoNumbers01(ListNode l1, ListNode l2) {
 
@@ -120,7 +121,8 @@ public class Q2SumTwo {
 
     private static void iterate(ListNode list, List<Integer> storage) {
         storage.add(list.val);
-        if (list.next == null) return;
+        if (list.next == null)
+            return;
         iterate(list.next, storage);
     }
 

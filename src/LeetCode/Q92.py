@@ -3,7 +3,7 @@
 # reverse the nodes of the list from position left to position right, and return the reversed list.
 
 class ListNode:
-    
+
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
@@ -15,7 +15,7 @@ class ListNode:
             node.next = ListNode(l[i])
             node = node.next
         return head
-    
+
     def __str__(self) -> str:
         node = self
         result = ''
@@ -23,6 +23,7 @@ class ListNode:
             result += str(node.val) + '->'
             node = node.next
         return result
+
 
 class Solution:
 
@@ -68,9 +69,9 @@ class Solution:
         start.next = prev
         left_bound.next = start
         return dummy.next
-    
+
 
 if __name__ == '__main__':
-    print(Solution().reverseBetween(ListNode.create([1,2,3,4,5]), 1, 5))
+    print(Solution().reverseBetween(ListNode.create([1, 2, 3, 4, 5]), 1, 5))
     print(Solution().reverseBetween(ListNode.create([5, 1, 1]), 2, 3))
-    print(Solution().reverseBetween(ListNode.create([1,2,3]), 1, 2))
+    print(Solution().reverseBetween(ListNode.create([1, 2, 3]), 1, 2))

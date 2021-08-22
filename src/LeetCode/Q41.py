@@ -35,6 +35,7 @@ class Solution:
                 return i + 1
         return length + 1
 
+
 if __name__ == "__main__":
     print(Solution().firstMissingPositive2([3, 4, -1, 1]))
     print(Solution().firstMissingPositive2([1]))

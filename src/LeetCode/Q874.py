@@ -1,5 +1,5 @@
 # Walking Robot Simulation
-# A robot on an infinite XY-plane starts at point (0, 0) and faces north. 
+# A robot on an infinite XY-plane starts at point (0, 0) and faces north.
 # The robot can receive one of three possible types of commands:
 
 # -2: turn left 90 degrees,
@@ -57,7 +57,7 @@ class Solution:
         maximum = 0
         for command in commands:
             if command == -1:
-                direction_index -= 1  
+                direction_index -= 1
             elif command == -2:
                 direction_index += 1
             else:
@@ -95,8 +95,8 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution().robotSim([4,-1,3], []) == 25)
-    print(Solution().robotSim([4,-1,4,-2,4], [[2,4]]) == 65)
+    print(Solution().robotSim([4, -1, 3], []) == 25)
+    print(Solution().robotSim([4, -1, 4, -2, 4], [[2, 4]]) == 65)
     print("Method2")
-    print(Solution().robotSim2([4,-1,3], []) == 25)
-    print(Solution().robotSim2([4,-1,4,-2,4], [[2,4]]) == 65)
+    print(Solution().robotSim2([4, -1, 3], []) == 25)
+    print(Solution().robotSim2([4, -1, 4, -2, 4], [[2, 4]]) == 65)

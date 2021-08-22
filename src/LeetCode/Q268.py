@@ -18,16 +18,17 @@ class Solution:
     # Not original
     # sum of a list of numbers = n (n + 1) / 2
     def missingNumber2(self, nums: list[int]) -> int:
-            n = len(nums)
-            return n * (n + 1) // 2 - sum(nums)
+        n = len(nums)
+        return n * (n + 1) // 2 - sum(nums)
+
 
 if __name__ == '__main__':
-    print(Solution().missingNumber([3,0,1]) == 2)
-    print(Solution().missingNumber([0,1]) == 2)
-    print(Solution().missingNumber([9,6,4,2,3,5,7,0,1]) == 8)
+    print(Solution().missingNumber([3, 0, 1]) == 2)
+    print(Solution().missingNumber([0, 1]) == 2)
+    print(Solution().missingNumber([9, 6, 4, 2, 3, 5, 7, 0, 1]) == 8)
     print(Solution().missingNumber([0]) == 1)
     print("===================================")
-    print(Solution().missingNumber2([3,0,1]) == 2)
-    print(Solution().missingNumber2([0,1]) == 2)
-    print(Solution().missingNumber2([9,6,4,2,3,5,7,0,1]) == 8)
+    print(Solution().missingNumber2([3, 0, 1]) == 2)
+    print(Solution().missingNumber2([0, 1]) == 2)
+    print(Solution().missingNumber2([9, 6, 4, 2, 3, 5, 7, 0, 1]) == 8)
     print(Solution().missingNumber2([0]) == 1)

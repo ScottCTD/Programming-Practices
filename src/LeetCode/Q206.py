@@ -5,7 +5,7 @@ from typing import overload
 
 
 class ListNode:
-    
+
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
@@ -17,7 +17,7 @@ class ListNode:
             node.next = ListNode(l[i])
             node = node.next
         return head
-    
+
     def __str__(self) -> str:
         node = self
         result = ''
@@ -25,6 +25,7 @@ class ListNode:
             result += str(node.val) + '->'
             node = node.next
         return result
+
 
 class Solution:
 
@@ -55,5 +56,6 @@ class Solution:
         node.next = prev
         return node
 
+
 if __name__ == '__main__':
-    print(Solution().reverseList2(ListNode.create([1,2,3,4,5])))
+    print(Solution().reverseList2(ListNode.create([1, 2, 3, 4, 5])))

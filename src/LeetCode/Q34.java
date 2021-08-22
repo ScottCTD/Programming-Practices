@@ -3,23 +3,20 @@ package LeetCode;
 import java.util.Arrays;
 
 /**
- * 给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
- * 如果数组中不存在目标值 target，返回[-1, -1]。
- * 进阶：
- * 你可以设计并实现时间复杂度为O(log n)的算法解决此问题吗？
- * 5,7,7,8,8,10   8
- * 1   1
+ * 给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。 如果数组中不存在目标值
+ * target，返回[-1, -1]。 进阶： 你可以设计并实现时间复杂度为O(log n)的算法解决此问题吗？ 5,7,7,8,8,10 8 1 1
  */
 public class Q34 {
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(searchRange02(new int[]{5, 7, 7, 8, 8, 10}, 6)));
+        System.out.println(Arrays.toString(searchRange02(new int[] { 5, 7, 7, 8, 8, 10 }, 6)));
     }
 
     // 01/20/2021 00:04
     // Original
     // 0 ms in LeetCode - Top Method
-    // Use binary search to get the pos of target, then spread left and right index to find the bound of target number.
+    // Use binary search to get the pos of target, then spread left and right index
+    // to find the bound of target number.
     public static int[] searchRange02(int[] nums, int target) {
         int length = nums.length;
         int left = 0, right = nums.length - 1;
@@ -37,7 +34,8 @@ public class Q34 {
                 break;
             }
         }
-        if (!found) return new int[]{-1, -1};
+        if (!found)
+            return new int[] { -1, -1 };
         left = right = mid;
         while (left >= 0 && nums[left] == target) {
             left--;
@@ -45,9 +43,8 @@ public class Q34 {
         while (right < length && nums[right] == target) {
             right++;
         }
-        return new int[]{left + 1, right - 1};
+        return new int[] { left + 1, right - 1 };
     }
-
 
     // 01/19/2021 09:00
     // Original
@@ -57,7 +54,7 @@ public class Q34 {
         int left = 0, right = nums.length - 1;
         while (left <= right) {
             if (nums[left] == target && nums[right] == target) {
-                return new int[]{left, right};
+                return new int[] { left, right };
             }
             if (nums[left] == target) {
                 right--;
@@ -70,7 +67,7 @@ public class Q34 {
             left++;
             right--;
         }
-        return new int[]{-1, -1};
+        return new int[] { -1, -1 };
     }
 
 }

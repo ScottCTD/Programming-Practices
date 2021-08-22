@@ -39,6 +39,7 @@ class Solution:
             map[s[j]] = j + 1
         return result
 
+
 if __name__ == "__main__":
     print(Solution().lengthOfLongestSubstring("abcabcbb"), 3)
     print(Solution().lengthOfLongestSubstring("bbbbb"), 1)

@@ -10,7 +10,7 @@
 
 # For example, "(H2O2)" and "(H2O2)3" are formulas.
 # Return the count of all elements as a string in the following form: the first name (in sorted order),
-# followed by its count (if that count is more than 1), followed by the second name (in sorted order), 
+# followed by its count (if that count is more than 1), followed by the second name (in sorted order),
 # followed by its count (if that count is more than 1), and so on.
 
 class Solution:
@@ -146,6 +146,8 @@ if __name__ == '__main__':
     print(Solution().countOfAtoms2('K4(ON(SO3)2)2') == 'K4N2O14S4')
     print(Solution().countOfAtoms2('Be32') == 'Be32')
     print(Solution().countOfAtoms2('(((Be32)))') == 'Be32')
-    print(Solution().countOfAtoms2('H11He49NO35B7N46Li20') == 'B7H11He49Li20N47O35')
+    print(Solution().countOfAtoms2(
+        'H11He49NO35B7N46Li20') == 'B7H11He49Li20N47O35')
     print(Solution().countOfAtoms2('HOH2') == 'H3O')
-    print(Solution().countOfAtoms2('((N42)24(OB40Li30CHe3O48LiNN26)33(C12Li48N30H13HBe31)21(BHN30Li26BCBe47N40)15(H5)16)14') == "B18900Be18984C4200H5446He1386Li33894N50106O22638")
+    print(Solution().countOfAtoms2('((N42)24(OB40Li30CHe3O48LiNN26)33(C12Li48N30H13HBe31)21(BHN30Li26BCBe47N40)15(H5)16)14')
+          == "B18900Be18984C4200H5446He1386Li33894N50106O22638")

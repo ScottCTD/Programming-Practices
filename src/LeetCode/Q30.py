@@ -53,23 +53,26 @@ class Solution:
                         map.clear()
                         start = i
                         break
-            start += 1            
+            start += 1
         return result
+
 
 if __name__ == "__main__":
     print(Solution().findSubstring("barfoothefoobarman", ["bar", "foo"]))
     print([0, 9])
-    print(Solution().findSubstring("wordgoodgoodgoodbestword", ["word","good","best","word"]))
+    print(Solution().findSubstring(
+        "wordgoodgoodgoodbestword", ["word", "good", "best", "word"]))
     print([])
-    print(Solution().findSubstring("barfoofoobarthefoobarman", ["bar","foo","the"]))
+    print(Solution().findSubstring(
+        "barfoofoobarthefoobarman", ["bar", "foo", "the"]))
     print([6, 9, 12])
-    print(Solution().findSubstring("wordgoodgoodgoodbestword", ["word","good","best","good"]))
+    print(Solution().findSubstring(
+        "wordgoodgoodgoodbestword", ["word", "good", "best", "good"]))
     print([8])
     print(Solution().findSubstring("lingmindraboofooowingdingbarrwingmonkeypoundcake",
-                                    ["fooo","barr","wing","ding","wing"]))
+                                   ["fooo", "barr", "wing", "ding", "wing"]))
     print([13])
     print(Solution().findSubstring("a", ["a"]))
     print([0])
-    print(Solution().findSubstring("aaaaaaaaaaaaaa", ["aa","aa"]))
+    print(Solution().findSubstring("aaaaaaaaaaaaaa", ["aa", "aa"]))
     print([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    

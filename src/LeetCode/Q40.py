@@ -8,6 +8,7 @@ class Solution:
     def combinationSum2(self, candidates: list[int], target: int) -> list[list[int]]:
         length = len(candidates)
         candidates.sort()
+
         def backtract(result: list[list[int]], path: list[int], sum: int, start: int):
             if sum > target:
                 return
@@ -21,12 +22,13 @@ class Solution:
                 # 去重
                 if i > start and candidates[i] == candidates[i - 1]:
                     continue
-                backtract(result, path + [candidates[i]], sum + candidates[i], i + 1)
+                backtract(result, path + [candidates[i]],
+                          sum + candidates[i], i + 1)
         result = []
         backtract(result, [], 0, 0)
         return result
 
 
 if __name__ == "__main__":
-    print(Solution().combinationSum2([10,1,2,7,6,1,5], 8))
-    print(Solution().combinationSum2([2,5,2,1,2], 5))
+    print(Solution().combinationSum2([10, 1, 2, 7, 6, 1, 5], 8))
+    print(Solution().combinationSum2([2, 5, 2, 1, 2], 5))

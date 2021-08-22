@@ -1,7 +1,5 @@
 package LeetCode;
 
-import xyz.scottc.scu.ArrayUtils;
-
 import java.util.Arrays;
 
 /**

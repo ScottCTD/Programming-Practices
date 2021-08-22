@@ -1,7 +1,7 @@
 # Summary Ranges
 # You are given a sorted unique integer array nums.
-# Return the smallest sorted list of ranges that cover all the numbers in the array exactly. 
-# That is, each element of nums is covered by exactly one of the ranges, 
+# Return the smallest sorted list of ranges that cover all the numbers in the array exactly.
+# That is, each element of nums is covered by exactly one of the ranges,
 # and there is no integer x such that x is in one of the ranges but not in nums.
 # Each range [a,b] in the list should be output as:
 
@@ -62,21 +62,27 @@ class Solution:
             result.append(str(nums[a]))
         return result
 
+
 if __name__ == "__main__":
-    print(Solution().summaryRanges([0,1,2,4,5,7]) == ["0->2","4->5","7"])
+    print(Solution().summaryRanges(
+        [0, 1, 2, 4, 5, 7]) == ["0->2", "4->5", "7"])
     print(Solution().summaryRanges([1, 2, 3, 4, 5, 6]) == ["1->6"])
     print(Solution().summaryRanges([1, 3]) == ["1", "3"])
     print(Solution().summaryRanges([1, 9, 10, 11, 15]) == ["1", "9->11", "15"])
-    print(Solution().summaryRanges([0,2,3,4,6,8,9]) == ["0","2->4","6","8->9"])
+    print(Solution().summaryRanges(
+        [0, 2, 3, 4, 6, 8, 9]) == ["0", "2->4", "6", "8->9"])
     print(Solution().summaryRanges([]) == [])
     print(Solution().summaryRanges([-1]) == ["-1"])
     print(Solution().summaryRanges([0]) == ["0"])
     print("Method2")
-    print(Solution().summaryRanges2([0,1,2,4,5,7]) == ["0->2","4->5","7"])
+    print(Solution().summaryRanges2(
+        [0, 1, 2, 4, 5, 7]) == ["0->2", "4->5", "7"])
     print(Solution().summaryRanges2([1, 2, 3, 4, 5, 6]) == ["1->6"])
     print(Solution().summaryRanges2([1, 3]) == ["1", "3"])
-    print(Solution().summaryRanges2([1, 9, 10, 11, 15]) == ["1", "9->11", "15"])
-    print(Solution().summaryRanges2([0,2,3,4,6,8,9]) == ["0","2->4","6","8->9"])
+    print(Solution().summaryRanges2(
+        [1, 9, 10, 11, 15]) == ["1", "9->11", "15"])
+    print(Solution().summaryRanges2(
+        [0, 2, 3, 4, 6, 8, 9]) == ["0", "2->4", "6", "8->9"])
     print(Solution().summaryRanges2([]) == [])
     print(Solution().summaryRanges2([-1]) == ["-1"])
     print(Solution().summaryRanges2([0]) == ["0"])

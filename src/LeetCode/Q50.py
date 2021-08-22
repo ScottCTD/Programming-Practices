@@ -13,6 +13,7 @@ class Solution:
         elif n == 0:
             return 1
 
+
 if __name__ == '__main__':
     print(0.00001 ** 2147483647)
     print(Solution().myPow(2, 10), 1024)

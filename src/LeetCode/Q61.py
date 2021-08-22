@@ -18,7 +18,7 @@ class ListNode:
             node.next = ListNode(l[i])
             node = node.next
         return head
-    
+
     def __str__(self) -> str:
         node = self
         result = ''
@@ -26,6 +26,7 @@ class ListNode:
             result += str(node.val) + '->'
             node = node.next
         return result
+
 
 class Solution:
 
@@ -57,11 +58,11 @@ class Solution:
         node.next = head
         return new_head
 
-    
+
 if __name__ == '__main__':
-    head = ListNode.create([1,2,3,4,5])
+    head = ListNode.create([1, 2, 3, 4, 5])
     print(Solution().rotateRight(head, 2))
-    head = ListNode.create([0,1,2])
+    head = ListNode.create([0, 1, 2])
     print(Solution().rotateRight(head, 4))
-    head = ListNode.create([1,2,3,4,5,6,7,8,9,10])
+    head = ListNode.create([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     print(Solution().rotateRight(head, 100))

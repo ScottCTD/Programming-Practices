@@ -31,5 +31,7 @@ class Solution:
 
 
 if __name__ == "__main__":
-    print(Solution().countCharacters(["cat","bt","hat","tree"], "atach") == 6)
-    print(Solution().countCharacters(["hello","world","leetcode"], "welldonehoneyr") == 10)
+    print(Solution().countCharacters(
+        ["cat", "bt", "hat", "tree"], "atach") == 6)
+    print(Solution().countCharacters(
+        ["hello", "world", "leetcode"], "welldonehoneyr") == 10)
