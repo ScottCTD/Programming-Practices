@@ -31,7 +31,7 @@ class ListNode:
 
 
 class Solution:
-    # 2022/01/16 Scott
+    # 2022/01/16 Scott 30 Minutes
     # Original
     # Time Complexity: O(n) 80.91%
     # Space Complexity: O(1) 37.81%

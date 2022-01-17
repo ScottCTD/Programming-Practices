@@ -1,8 +1,14 @@
-# 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
-# 请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。
-# 2021/07/22 Non-original
-# 120ms: Exceed 40+% (Someone cheaters not reach O(N))
+# 41. First Missing Positive
+# Given an unsorted integer array nums, return the smallest missing positive integer.
+
+# You must implement an algorithm that runs in O(n) time and uses constant extra space.
+
+from typing import List
+
+
 class Solution:
+    # 2021/07/22 Non-original
+    # 120ms: Exceed 40+% (Someone cheaters not reach O(N))
     # 我们可以发现，数组的下标是0 -> len的
     # 所以如果我们的数组里面有 1 -> len + 1的数的话
     # 我们可以把他们通过交换位置的方式归位：例如2移动到数组第二个格子，也就是下标为1的地方
@@ -34,6 +40,23 @@ class Solution:
             if exist[i] == 0:
                 return i + 1
         return length + 1
+
+    # 2022/01/16 Not Original
+    # Time Complexity: O(n) 30% (There are cheaters)
+    # Space Complexity: O(1)
+    def firstMissingPositive3(self, nums: List[int]) -> int:
+        n = len(nums)
+        for i in range(n):
+            if nums[i] <= 0:
+                nums[i] = n + 1
+        for i in range(n):
+            a = abs(nums[i])
+            if a <= n and nums[a - 1] > 0:
+                nums[a - 1] *= -1
+        for i in range(n):
+            if nums[i] > 0:
+                return i + 1
+        return n + 1
 
 
 if __name__ == "__main__":
