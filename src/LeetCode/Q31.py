@@ -5,7 +5,6 @@
 
 # The replacement must be in place and use only constant extra memory.
 
-from re import L
 from typing import List
 
 
@@ -42,15 +41,14 @@ class Solution:
 if __name__ == '__main__':
     s = Solution()
 
-    s.nextPermutation([2,3,1]) # 312
-    s.nextPermutation([1, 2, 3]) # 132
-    s.nextPermutation([3, 2, 1]) # 123 
-    s.nextPermutation([1, 1, 5])# 151
-    s.nextPermutation([1, 3, 5, 2, 1, 4, 3]) # 1352314
+    s.nextPermutation([2, 3, 1])  # 312
+    s.nextPermutation([1, 2, 3])  # 132
+    s.nextPermutation([3, 2, 1])  # 123
+    s.nextPermutation([1, 1, 5])  # 151
+    s.nextPermutation([1, 3, 5, 2, 1, 4, 3])  # 1352314
     s.nextPermutation([1, 8, 7, 6, 5, 4, 3])
     s.nextPermutation([3, 8, 7, 6, 5, 4, 1])
     s.nextPermutation([1, 8, 7, 6, 2, 4, 9])
     s.nextPermutation([1, 8, 2, 6, 5, 4, 3])
-    s.nextPermutation([4,4,4,5,4,3])
-    s.nextPermutation([4,2,0,2,3,2,0]) # [4,2,0,3,0,2,2]
-
+    s.nextPermutation([4, 4, 4, 5, 4, 3])
+    s.nextPermutation([4, 2, 0, 2, 3, 2, 0])  # [4,2,0,3,0,2,2]
