@@ -1,8 +1,4 @@
-.idea/
 .vscode/
-out/
-
-Competitive Programming.iml
 
 *.exe
-
+*.out
