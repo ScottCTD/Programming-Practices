@@ -1,5 +1,5 @@
 .vscode/
-LeetCode/python/.idea/
+*.idea/
 
 *.exe
 *.out
