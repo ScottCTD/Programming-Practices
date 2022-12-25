@@ -164,7 +164,7 @@ class Solution2:
 class Solution3:
 
     #                                    transition[(state, input)] -> set of next states
-    def create_NFA(self, p: str) -> tuple[dict[tuple[int, str], set[int]], int]:
+    def isMatch(self, s: str, p: str) -> bool:
         transitions: dict[tuple[int, str], set[int]] = {}
         accepting_state = 0
         n = len(p)
@@ -173,11 +173,7 @@ class Solution3:
         while i < n:
             c = p[i]
             if i == n - 1:
-                a = (state, c)
-                if a in transitions:
-                    transitions[a].add(state + 1)
-                else:
-                    transitions[(state, c)] = {state + 1}
+                transitions[(state, c)] = {state + 1}
                 accepting_state = state + 1
             else:
                 if p[i + 1] == '*':
@@ -188,18 +184,10 @@ class Solution3:
                         accepting_state = state
                     i += 1
                 else:
-                    a = (state, c)
-                    if a in transitions:
-                        transitions[a].add(state + 1)
-                    else:
-                        transitions[(state, c)] = {state + 1}
+                    transitions[(state, c)] = {state + 1}
                     state += 1
             i += 1
-        return transitions, accepting_state
-
-    def isMatch(self, s: str, p: str) -> bool:
         n = len(s)
-        transitions, accepting_state = self.create_NFA(p)
         current_states = {0}
         for i in range(n):
             c = s[i]
