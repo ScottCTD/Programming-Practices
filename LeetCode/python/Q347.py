@@ -3,6 +3,7 @@
 # You may return the answer in any order.
 
 from typing import List, Dict
+from collections import Counter
 
 
 # 2023-01-20 01:53:49
@@ -11,31 +12,26 @@ from typing import List, Dict
 # Space: 18.4 MB beats 68.59%
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        count = {}
-        for i in nums:
-            if i in count:
-                count[i] += 1
-            else:
-                count[i] = 1
-        heap = [0] * (len(count) + 1)
+        count = Counter(nums)
         heap_size = 0
         for i in count:
             # insert i into the heap
-            heap[heap_size] = i
+            nums[heap_size] = i
+            j = heap_size
             heap_size += 1
-            j = heap_size - 1
             parent = (j - 1) >> 1
-            while j > 0 and count[heap[j]] < count[heap[parent]]:
-                heap[j], heap[parent] = heap[parent], heap[j]
+            while j > 0 and count[nums[j]] < count[nums[parent]]:
+                nums[j], nums[parent] = nums[parent], nums[j]
                 j = parent
                 parent = (j - 1) >> 1
-            # if heap_size is k, then we extract the min
+            # if heap_size is k + 1, then we extract the min
+            # we need to maintain the size to be k
             if heap_size == k + 1:
-                heap[0], heap[heap_size - 1] = heap[heap_size - 1], heap[0]
+                nums[0], nums[heap_size - 1] = nums[heap_size - 1], nums[0]
                 heap_size -= 1
-                self.heapify(count, heap, heap_size, 0)
-        # the things left are k most frequent
-        return heap[:heap_size]
+                self.heapify(count, nums, heap_size, 0)
+        # the things left are k-most-frequent
+        return nums[:heap_size]
 
     def heapify(self, count: Dict, heap: List[int], heap_size: int, i: int):
         smallest = i
