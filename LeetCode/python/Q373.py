@@ -5,6 +5,7 @@
 # Return the k pairs (u1, v1), (u2, v2), ..., (uk, vk) with the smallest sums.
 
 from typing import List
+import heapq
 
 
 # 2023-01-21 00:42:23
@@ -58,6 +59,32 @@ class Solution:
         if largest != i:
             heap[largest], heap[i] = heap[i], heap[largest]
             self.heapify(heap, heap_size, largest)
+
+
+#       2   4   6
+#    +------------
+#  1 |  3   5   7
+#  7 |  9  11  13
+# 11 | 13  15  17
+# we grow from top left corner to the bottom right corner
+# not orignial but very efficient
+class Solution2:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        queue = []
+
+        def push(i, j):
+            if i < len(nums1) and j < len(nums2):
+                heapq.heappush(queue, [nums1[i] + nums2[j], i, j])
+
+        push(0, 0)
+        pairs = []
+        while queue and len(pairs) < k:
+            _, i, j = heapq.heappop(queue)
+            pairs.append([nums1[i], nums2[j]])
+            push(i, j + 1)
+            if j == 0:
+                push(i + 1, 0)
+        return pairs
 
 
 s = Solution()
