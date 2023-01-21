@@ -86,6 +86,35 @@ class Solution2:
                 push(i + 1, 0)
         return pairs
 
+import heapq
+# Use BFS to search every adjacent (right and bottom) sum
+# add all of them to a min-heap
+# the heap would keep the minimum on top
+# we just need to store k minimum to a result list
+# 2023-01-21 01:39:47
+# inspired
+# Time: 1133 ms beats 94.98%
+# Space: 34 MB beats 33.95%
+class Solution2:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        n1, n2 = len(nums1), len(nums2)
+        result = []
+        visited = {(0, 0)}
+        heap_min = [(nums1[0] + nums2[0], 0, 0)]
+        for i in range(min(k, n1 * n2)):
+            s, p, q = heapq.heappop(heap_min)
+            m1 = nums1[p]
+            m2 = nums2[q]
+            result.append([m1, m2])
+            new_p = p + 1
+            new_q = q + 1
+            if new_p < n1 and (new_p, q) not in visited:
+                heapq.heappush(heap_min, (nums1[new_p] + m2, new_p, q))
+                visited.add((new_p, q))
+            if new_q < n2 and (p, new_q) not in visited:
+                heapq.heappush(heap_min, (m1 + nums2[q + 1], p, new_q))
+                visited.add((p, new_q))
+        return result
 
 s = Solution()
 
