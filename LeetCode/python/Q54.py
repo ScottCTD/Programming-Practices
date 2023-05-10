@@ -42,6 +42,7 @@ class Solution2:
     # Original
     # 2023/05/09
     # 20.88%
+    # Theta(mn)
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         m = len(matrix)
         n = len(matrix[0])
@@ -56,13 +57,13 @@ class Solution2:
             #            i == m - a and d == [1, 0]
             #            j == b and     d == [-1, 0]
             #            i == a and     d == [0, -1]
-            if j == n - offset - 1 and d == [0, 1]:
+            if j == n - offset - 1 and d[1] == 1:
                 pass
-            elif i == m - offset - 1 and d == [1, 0]:
+            elif i == m - offset - 1 and d[0] == 1:
                 pass
-            elif j == offset and d == [0, -1]:
+            elif j == offset and d[1] == -1:
                 offset += 1
-            elif i == offset and d == [-1, 0]:
+            elif i == offset and d[0] == -1:
                 pass
             else:
                 i += d[0]
