@@ -4,6 +4,7 @@
 
 from typing import List, Dict
 from collections import Counter
+import heapq
 
 
 # 2023-01-20 01:53:49
@@ -46,7 +47,23 @@ class Solution:
             self.heapify(count, heap, heap_size, smallest)
 
 
-s = Solution()
+# 2023-05-21 20:37:44
+# use library heapq
+# time 78.8% space 22.2%
+class Solution2:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        counter = Counter(nums)
+        heap = []
+        for i, count in counter.items():
+            item = (count, i)
+            if len(heap) >= k:
+                heapq.heappushpop(heap, item)
+            else:
+                heapq.heappush(heap, item)
+        return [e[1] for e in heap]
+
+
+s = Solution2()
 print(s.topKFrequent([1, 1, 1, 2, 2, 3], 2))
 print(s.topKFrequent([1], 1))
 print(s.topKFrequent([4, 1, -1, 2, -1, 2, 3], 2))
