@@ -42,6 +42,7 @@ class Solution:
 # 2023-05-27 02:48:13
 # inspired
 # bottom up dp with optimizations
+# time 99.44% O(n) space 60.34% O(n)
 # the key observation is that: If the current one is False, then the next squares must be True.
 class Solution2:
     def winnerSquareGame(self, n: int) -> bool:
