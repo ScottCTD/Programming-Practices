@@ -1,6 +1,7 @@
 from typing import List
 
 
+# TODO
 class Solution:
     def sumOfPower(self, nums: List[int]) -> int:
         m = len(nums)

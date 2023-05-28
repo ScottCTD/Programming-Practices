@@ -8,6 +8,7 @@ from math import gcd
 # 2023-05-27 12:06:07
 # original
 # TLE
+# TODO
 class Solution:
     def canTraverseAllPairs(self, nums: List[int]) -> bool:
         n = len(nums)

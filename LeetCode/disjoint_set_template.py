@@ -83,6 +83,7 @@ def test_disjoint_set():
 
     ds.union(1, 3)
     assert ds.find(0) == ds.find(1) == ds.find(2) == ds.find(3) == ds.find(4)
+    assert ds.is_connected(list(range(5)))
     print('All test cases passed!')
 
 
