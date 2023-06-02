@@ -25,23 +25,15 @@ class Solution:
         # construct a graph, two nodes are connected if one could fire the other
         n = len(bombs)
         graph = defaultdict(list)
-        # for bomb1 in bombs:
-        #     for bomb2 in bombs:
-        #         x1, y1, r1 = bomb1
-        #         x2, y2, r2 = bomb2
-        #         if r1 >= (x1 - x2) ** 2 + (y1 - y2) ** 2:
-        #             graph[(x1, y1, r1)].append((x2, y2, r2))
-        # Build the graph
         for i in range(n):
-            for j in range(n):
-                if i == j:
-                    continue
+            for j in range(i + 1, n):
                 xi, yi, ri = bombs[i]
-                xj, yj, _ = bombs[j]
-
-                # Create a path from node i to node j, if bomb i detonates bomb j.
-                if ri ** 2 >= (xi - xj) ** 2 + (yi - yj) ** 2:
+                xj, yj, rj = bombs[j]
+                d = (xi - xj) ** 2 + (yi - yj) ** 2
+                if d <= ri ** 2:
                     graph[i].append(j)
+                if d <= rj ** 2:
+                    graph[j].append(i)
         # find the maximum length of path
         ans = 1
         for i in range(n):
