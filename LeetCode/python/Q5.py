@@ -5,6 +5,11 @@ from typing import List, Optional
 from collections import deque, defaultdict
 import heapq
 
+# TODO: more solutions
+
+# 2023-06-03 01:32:14
+# learned
+# dp
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         n = len(s)
