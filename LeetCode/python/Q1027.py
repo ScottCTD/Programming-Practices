@@ -12,7 +12,9 @@ from typing import List, Optional
 from collections import deque, defaultdict
 import heapq
 
-
+# 2023-06-22 23:59:56
+# original
+# very inefficient but satisfies time O(n^2) be on par with the best probably
 class Solution:
     def longestArithSeqLength(self, nums: List[int]) -> int:
         n = len(nums)
