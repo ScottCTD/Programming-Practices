@@ -10,6 +10,7 @@ from typing import List
 class Solution:
     def lengthOfLIS(self, nums: List[int]) -> int:
         n = len(nums)
+        # dp[i] means the length of LIS ending with nums[i]
         dp = [1] * n
         ans = 1
         for i in range(1, n):
